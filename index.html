@@ -1,18 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dice Roller</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <h1>Custom Dice Roller</h1>
-  <form>
-    <label for="num-dice">Number of Dice:</label>
-    <input type="number" id="num-dice" min="1" max="10" value="1">
-    <button type="button" onclick="rollDice()">Roll Dice</button>
-  </form>
-  <div id="dice-container"></div>
-
-  <script type="text/javascript" src="script.js"></script>
-</body>
+   <head>
+      <title>Custom Dice Roller</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+	  <link rel="stylesheet" href="pico-master/css/pico.min.css">
+      <script src="script.js"></script>
+   </head>
+   <body>
+      <h1>Custom Dice Roller</h1>
+      <form>
+         <label>Select main setting:</label>
+         <select id="main-setting">
+            <option value="classic">Classic</option>
+            <option value="challenge">Challenge</option>
+            <option value="giant">Giant</option>
+            <option value="epic">Epic</option>
+         </select>
+         <label>Select first expansion:</label>
+         <select id="first-expansion">
+            <option value="none">No expansion 1</option>
+            <option value="airline">Airline</option>
+            <option value="alien-farmer">Alien Farmer</option>
+            <option value="canyon">Canyon</option>
+            <option value="city-builder">City Builder</option>
+            <option value="construction">Construction</option>
+            <option value="desert">Desert</option>
+            <option value="forest">Forest</option>
+            <option value="galactic-invaders">Galactic Invaders</option>
+            <option value="investigation">Investigation</option>
+            <option value="lake">Lake</option>
+            <option value="lava">Lava</option>
+            <option value="meteor">Meteor</option>
+            <option value="pluck-man">Pluck-man</option>
+            <option value="portal">Portal</option>
+            <option value="power-grid">Power grid</option>
+            <option value="rainbow">Rainbow</option>
+            <option value="renovation">Renovation</option>
+            <option value="ritual">Ritual</option>
+            <option value="river">River</option>
+            <option value="separation">Separation</option>
+            <option value="special">Special</option>
+            <option value="street-lamps">Street lamps</option>
+            <option value="superconnection">Superconnection</option>
+            <option value="tentacle">Tentacle</option>
+            <option value="tetromino">Tetromino</option>
+            <option value="trail">Trail</option>
+            <option value="underground">Underground</option>
+            <option value="weather">Weather</option>
+         </select>
+         <label>Select second expansion:</label>
+         <select id="second-expansion">
+            <option value="none">No expansion 2</option>
+            <option value="airline">Airline</option>
+            <option value="alien-farmer">Alien Farmer</option>
+            <option value="canyon">Canyon</option>
+            <option value="city-builder">City Builder</option>
+            <option value="construction">Construction</option>
+            <option value="desert">Desert</option>
+            <option value="forest">Forest</option>
+            <option value="galatic-invaders">Galactic Invaders</option>
+            <option value="investigation">Investigation</option>
+            <option value="lake">Lake</option>
+            <option value="lava">Lava</option>
+            <option value="meteor">Meteor</option>
+            <option value="pluck-man">Pluck-man</option>
+            <option value="portal">Portal</option>
+            <option value="power-grid">Power grid</option>
+            <option value="rainbow">Rainbow</option>
+            <option value="renovation">Renovation</option>
+            <option value="ritual">Ritual</option>
+            <option value="river">River</option>
+            <option value="separation">Separation</option>
+            <option value="special">Special</option>
+            <option value="street-lamps">Street lamps</option>
+            <option value="superconnection">Superconnection</option>
+            <option value="tentacle">Tentacle</option>
+            <option value="tetromino">Tetromino</option>
+            <option value="trail">Trail</option>
+            <option value="underground">Underground</option>
+            <option value="weather">Weather</option>
+         </select>
+         <button id="roll-dice" type="button" onclick="rollDice()">Roll Dice</button>
+		 <button id="reset" type="button" onclick="clearBox('container')">Reset</button>
+      </form>
+      <div id="container"></div>
+   </body>
 </html>
