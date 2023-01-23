@@ -16,20 +16,20 @@ var dicePool = {
 		rounds: 7
 	},
 	giant: {
-		dice: ["Challenge/images/challenge_defaultA_",
-			"Challenge/images/challenge_defaultA_",
+		dice: ["Classic/images/classic_defaultA_",
+			"Classic/images/classic_defaultA_",
 			"Challenge/images/challenge_defaultA_",
 			"Challenge/images/challenge_defaultB_"
 		],
 		rounds: 12
 	},
 	epic: {
-		dice: ["Challenge/images/challenge_defaultA_",
+		dice: ["Classic/images/classic_defaultA_",
+			"Classic/images/classic_defaultA_",
 			"Challenge/images/challenge_defaultA_",
-			"Challenge/images/challenge_defaultA_",
-			"Challenge/images/challenge_defaultA_",
-			"Challenge/images/challenge_defaultA_",
-			"Challenge/images/challenge_defaultB_"
+			"Challenge/images/challenge_defaultB_",
+			"Classic/images/classic_defaultA_",
+			"Classic/images/classic_defaultA_"
 		],
 		rounds: 10
 	}
@@ -223,18 +223,19 @@ function rollDice() {
 	var roundImg = document.createElement("img");
 	var row = document.createElement("div");
 	
-	roundImg.height = 250;
-	roundImg.width = 250;
+	roundImg.height = 200;
+	roundImg.width = 200;
 	currentRound += 1;
 	roundImg.src = "RRI/round_" + currentRound + ".png";
 	row.appendChild(roundImg);
+	row.classList.add("image-row");
 	
 	for (var i = 0; i < currentDicePool.length; i++) {
 		var roll = Math.floor(Math.random() * 6) + 1;
 		var diceImg = document.createElement("img");
-		diceImg.height = 250;
-		diceImg.width = 250;
-		diceImg.className  = "blur";
+		diceImg.height = 200;
+		diceImg.width = 200;
+		diceImg.classList.add("disable-dbl-tap-zoom", "blur");
 		diceImg.setAttribute('onclick', "spoiler(this)")
 		diceImg.src = "RRI/dice/" + currentDicePool[i] + roll + ".png";
 		row.appendChild(diceImg);
@@ -244,6 +245,16 @@ function rollDice() {
 	
 	}
 	
+}
+
+function unhide_elem(elem) {
+	var element = document.getElementById(elem);
+  	element.classList.remove('hidden');
+}
+
+function hide_elem(elem) {
+	var element = document.getElementById(elem);
+  	element.classList.add('hidden');
 }
 
 function spoiler(elem) {
