@@ -17,7 +17,7 @@
 	--main-font: 'SF Pro Display';
 	--alt-font: 'Gobold Thin';
 	--mono-font: 'Share-TechMono';
-	--temp-font: "Roboto Condensed";
+	--temp-font: 'Roboto Condensed';
 }
 
 * {
@@ -46,7 +46,8 @@ main {
 	overflow: hidden;
 }
 
-img, video {
+img,
+video {
 	width: 100%;
 	height: 100%;
 	-o-object-fit: cover;
@@ -324,7 +325,6 @@ p {
 	flex-direction: row;
 }
 
-
 .flex-gap--small {
 	gap: min(4vh, 1rem);
 }
@@ -411,7 +411,7 @@ p {
 }
 
 .background-overlay__container {
-	position: relative;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 }
@@ -548,12 +548,12 @@ p {
 	height: min(8vh, 2rem);
 }
 
-.nav li *:hover{
+.nav li *:hover {
 	color: var(--alt-accent-color) !important;
 }
 
 .nav__data {
-	justify-content: space-between;
+	justify-content: end;
 }
 
 .nav__logo {
@@ -812,13 +812,11 @@ footer .section-container {
 	justify-content: space-between;
 }
 
-
 /*-------------------------------------------------------------- # Maps --------------------------------------------------------------*/
 
 .leaf-map {
 	min-height: min(40vh, 15rem);
 }
-
 
 /*-------------------------------------------------------------- # Animations --------------------------------------------------------------*/
 
@@ -856,7 +854,6 @@ footer .section-container {
 	-webkit-animation: slideDown 5s forwards;
 	animation: slideDown 5s forwards;
 }
-
 
 @-webkit-keyframes slideDown {
 	0% {
@@ -1129,130 +1126,206 @@ footer .section-container {
 	background: transparent;
 }
 
-
 @media (max-width: 1200px) {
-
 	.event-date,
 	.event-day,
 	.event-month {
 		width: 100%;
 		border-radius: 0;
 	}
-
 }
 
 .cursor {
 	&::after {
-    content: "|";
-	margin-left: min(1vw, 0.33rem);
-    color: var(--alt-accent-color);
-  	-webkit-animation: blink 1s infinite;
-          animation: blink 1s infinite;
-  }
+		content: '|';
+		margin-left: min(1vw, 0.33rem);
+		color: var(--alt-accent-color);
+		-webkit-animation: blink 1s infinite;
+		animation: blink 1s infinite;
+	}
 }
 
 .cursor.typing {
-  	-webkit-animation: none;
-  	        animation: none;
+	-webkit-animation: none;
+	animation: none;
 }
 
-
 @-webkit-keyframes blink {
-  0%  { color: var(--alt-accent-color); }
-  49% { color: var(--alt-accent-color); }
-  50% { color: transparent; }
-  99% { color: transparent; }
-  100%  { color: var(--alt-accent-color); }
+	0% {
+		color: var(--alt-accent-color);
+	}
+	49% {
+		color: var(--alt-accent-color);
+	}
+	50% {
+		color: transparent;
+	}
+	99% {
+		color: transparent;
+	}
+	100% {
+		color: var(--alt-accent-color);
+	}
 }
 
 @keyframes blink {
-  0%  { color: var(--alt-accent-color); }
-  49% { color: var(--alt-accent-color); }
-  50% { color: transparent; }
-  99% { color: transparent; }
-  100%  { color: var(--alt-accent-color); }
+	0% {
+		color: var(--alt-accent-color);
+	}
+	49% {
+		color: var(--alt-accent-color);
+	}
+	50% {
+		color: transparent;
+	}
+	99% {
+		color: transparent;
+	}
+	100% {
+		color: var(--alt-accent-color);
+	}
 }
 
 @-webkit-keyframes testRight {
-    0% {
-        transform: translate3d(0, 0%, 0);
-    }
-    40% {
-        transform: translate3d(0, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0, 100%, 0);
-        display: none;
-    }
+	0% {
+		transform: translate3d(0, 0%, 0);
+	}
+	40% {
+		transform: translate3d(0, 0%, 0);
+	}
+	100% {
+		transform: translate3d(0, 100%, 0);
+		display: none;
+	}
 }
 
 @keyframes testRight {
-    0% {
-        transform: translate3d(0, 0%, 0);
-    }
-    40% {
-        transform: translate3d(0, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0, 100%, 0);
-        display: none;
-    }
+	0% {
+		transform: translate3d(0, 0%, 0);
+	}
+	40% {
+		transform: translate3d(0, 0%, 0);
+	}
+	100% {
+		transform: translate3d(0, 100%, 0);
+		display: none;
+	}
 }
 
-
 @-webkit-keyframes shake {
- 20% { transform: translate(0px, 0px); color: var(--main-accent-color) }
- 25% { transform: translate(0px, 2px) }
- 30% { transform: translate(-2px, -2px) }
- 35% { transform: translate(2px, 0px) }
- 40% { transform: translate(2px, -2px) }
- 45% { transform: translate(-2px, 0px) }
- 50% { transform: translate(2px, 2px) }
- 55% { transform: translate(0px, -2px) }
- 60% { transform: translate(-2px, 2px) }
- 65% { transform: translate(0px, 0px); }
- 80% { color: var(--main-accent-color) }
- 85% { color: transparent;}
- 90% { color: var(--main-accent-color) }
- 95% { color: transparent;}
- 100% { color: var(--main-accent-color) }
+	20% {
+		transform: translate(0px, 0px);
+		color: var(--main-accent-color);
+	}
+	25% {
+		transform: translate(0px, 2px);
+	}
+	30% {
+		transform: translate(-2px, -2px);
+	}
+	35% {
+		transform: translate(2px, 0px);
+	}
+	40% {
+		transform: translate(2px, -2px);
+	}
+	45% {
+		transform: translate(-2px, 0px);
+	}
+	50% {
+		transform: translate(2px, 2px);
+	}
+	55% {
+		transform: translate(0px, -2px);
+	}
+	60% {
+		transform: translate(-2px, 2px);
+	}
+	65% {
+		transform: translate(0px, 0px);
+	}
+	80% {
+		color: var(--main-accent-color);
+	}
+	85% {
+		color: transparent;
+	}
+	90% {
+		color: var(--main-accent-color);
+	}
+	95% {
+		color: transparent;
+	}
+	100% {
+		color: var(--main-accent-color);
+	}
 }
 
 @keyframes shake {
- 20% { transform: translate(0px, 0px); color: var(--main-accent-color) }
- 25% { transform: translate(0px, 2px) }
- 30% { transform: translate(-2px, -2px) }
- 35% { transform: translate(2px, 0px) }
- 40% { transform: translate(2px, -2px) }
- 45% { transform: translate(-2px, 0px) }
- 50% { transform: translate(2px, 2px) }
- 55% { transform: translate(0px, -2px) }
- 60% { transform: translate(-2px, 2px) }
- 65% { transform: translate(0px, 0px); }
- 80% { color: var(--main-accent-color) }
- 85% { color: transparent;}
- 90% { color: var(--main-accent-color) }
- 95% { color: transparent;}
- 100% { color: var(--main-accent-color) }
+	20% {
+		transform: translate(0px, 0px);
+		color: var(--main-accent-color);
+	}
+	25% {
+		transform: translate(0px, 2px);
+	}
+	30% {
+		transform: translate(-2px, -2px);
+	}
+	35% {
+		transform: translate(2px, 0px);
+	}
+	40% {
+		transform: translate(2px, -2px);
+	}
+	45% {
+		transform: translate(-2px, 0px);
+	}
+	50% {
+		transform: translate(2px, 2px);
+	}
+	55% {
+		transform: translate(0px, -2px);
+	}
+	60% {
+		transform: translate(-2px, 2px);
+	}
+	65% {
+		transform: translate(0px, 0px);
+	}
+	80% {
+		color: var(--main-accent-color);
+	}
+	85% {
+		color: transparent;
+	}
+	90% {
+		color: var(--main-accent-color);
+	}
+	95% {
+		color: transparent;
+	}
+	100% {
+		color: var(--main-accent-color);
+	}
 }
 
 #home-transition {
-    position: absolute;
-    background-color: var(--alt-accent-color);
-    z-index: 999;
-    -webkit-animation: testRight 3s forwards;
-            animation: testRight 3s forwards;
+	position: absolute;
+	background-color: var(--alt-accent-color);
+	z-index: 999;
+	-webkit-animation: testRight 3s forwards;
+	animation: testRight 3s forwards;
 }
 
 #home-transition p {
 	background-color: transparent;
-    -webkit-animation: shake 1s forwards;
-            animation: shake 1s forwards;
+	-webkit-animation: shake 1s forwards;
+	animation: shake 1s forwards;
 }
 
-
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: var(--alt-accent-color);
+	background: var(--alt-accent-color);
 }
 
 .swiper-pagination-bullet {
@@ -1285,7 +1358,8 @@ footer .section-container {
 	}
 	100% {
 		translate: translate3d(0px, 0%, 0px);
-}}
+	}
+}
 
 #home-partners .title {
 	font-size: min(24vw, 12rem);
@@ -1296,10 +1370,9 @@ footer .section-container {
 }
 
 #home-partners-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
