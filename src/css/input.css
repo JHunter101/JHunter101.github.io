@@ -1,0 +1,84 @@
+@tailwind base;
+
+:root {
+	--main-bg-color: rgb(0, 0, 0);
+	--main-accent-color: rgb(255, 255, 255);
+	--alt-bg-color: rgb(255, 255, 255);
+	--alt-accent-color: rgb(190, 19, 45);
+	--alt-accent-color-light: rgb(253, 244, 244);
+
+	--main-font: 'Gobold Thin';
+	--alt-font: 'Gobold Thin';
+	--font-font: 'SF Pro Display';
+	--mono-font: 'Share-TechMono';
+}
+
+#home-main .title {
+	font-size: min(20vw, 16rem);
+	margin-bottom: 0;
+}
+
+#home-main .subtitle {
+	font-size: min(4.5vw, 3rem);
+	justify-content: space-between;
+	margin-bottom: 0;
+}
+
+#home-main .subtitle .subtitle {
+	margin-bottom: max(-0.15vw, -0.1rem);
+	margin-top: max(-3.5vw, -3.5rem);
+}
+
+#home-main .text--tiny {
+	transform: scale(-1, 1);
+	margin-bottom: 0;
+	margin-top: max(-0.3vw, -0.2rem);
+}
+
+#home-main * {
+	background-color: transparent !important;
+}
+
+#home-main-video {
+	position: absolute;
+	background-color: var(--main-bg-color) !important;
+}
+
+#home-main-video video {
+	width: 35%;	
+}
+
+.double-strikethrough {
+	display: none;
+	position: absolute;
+	width: 120%;
+	left: -10%;
+	right: 0;
+	top: 35%;
+	bottom: 35%;
+	border-top: min(0.45vw, 0.3rem) solid var(--main-accent-color);
+	border-bottom: min(0.45vw, 0.3rem) solid var(--main-accent-color);
+	background: transparent;
+}
+
+#home-conversation .header--large {
+	font-size: min(9vw, 3rem);
+}
+
+#home-conversation .conversation-name {
+	margin-top: min(0.75vw, 0.5rem);
+}
+
+.section-tuck--desk-wide,
+.section-tuck {
+	border-top: 1px solid var(--main-accent-color);
+	border-bottom: 1px solid var(--main-accent-color);
+}
+
+#home-everything .header--large {
+	font-size: min(3vw, 2rem);
+}
+
+#home-everything #i-make .header--large {
+	font-size: min(6vw, 4rem);
+}
