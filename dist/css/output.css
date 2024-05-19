@@ -554,8 +554,6 @@ video {
 #home-main-video {
   position: absolute;
   background-color: var(--main-bg-color) !important;
-  height: 100%;
-  width: 100%;
 }
 
 #home-main-video video {
@@ -596,6 +594,3 @@ video {
 #home-everything #i-make .header--large {
   font-size: min(6vw, 4rem);
 }
-
-
-

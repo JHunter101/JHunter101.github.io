@@ -15,10 +15,10 @@ function type(toTypeID: string, toTypeString: string): Promise<void> {
             textContainer.classList.add('cursor', 'typing');
         }
         function typeCharacter(index: number) {
-            const typingDelay = 25;
+            let typingDelay = 25;
             const c: string = toTypeString.charAt(index);
             if (c === '.') {
-                // Handle special case for '.'
+                typingDelay *= 8
             }
             console.log(typingDelay);
             if (index < toTypeString.length) {
