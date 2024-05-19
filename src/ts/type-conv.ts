@@ -1,45 +1,46 @@
-const textContainers: string[] = ['conv1b', 'conv2b', 'conv3b', 'conv4b'];
+const textContainers: string[] = ['conv1b', 'conv2b', 'conv3b', 'conv4b']
 
 function type(toTypeID: string, toTypeString: string): Promise<void> {
     return new Promise(resolve => {
-        const textContainer: HTMLElement | null = document.getElementById(toTypeID);
+        const textContainer: HTMLElement | null = document.getElementById(toTypeID)
         if (toTypeString === '') {
-            toTypeString = textContainer?.textContent || '';
+            toTypeString = textContainer?.textContent || ''
             if (textContainer) {
-                textContainer.textContent = '';
-                unhide_elem(toTypeID);
-                unhide_elem(toTypeID.slice(0, -1) + 'a');
+                textContainer.textContent = ''
+                unhide_elem(toTypeID)
+                unhide_elem(toTypeID.slice(0, -1) + 'a')
             }
         }
         if (textContainer) {
-            textContainer.classList.add('cursor', 'typing');
+            textContainer.classList.add('cursor', 'typing')
         }
         function typeCharacter(index: number) {
-            let typingDelay = 25;
-            const c: string = toTypeString.charAt(index);
-            if (c === '.') {
-                typingDelay *= 8
+            let typingDelay = 20
+            const c: string = toTypeString.charAt(index)
+            if (index > 0) {
+                if (toTypeString.charAt(index - 1) === '.') {
+                    typingDelay *= 20
+                }
             }
-            console.log(typingDelay);
             if (index < toTypeString.length) {
                 setTimeout(() => {
                     if (textContainer) {
-                        textContainer.textContent += c;
+                        textContainer.textContent += c
                     }
-                    typeCharacter(index + 1);
-                }, typingDelay);
+                    typeCharacter(index + 1)
+                }, typingDelay)
             } else {
                 if (textContainer) {
-                    textContainer.classList.remove('typing');
+                    textContainer.classList.remove('typing')
                     if (!['conv4b'].includes(toTypeID)) {
-                        textContainer.classList.remove('cursor');
+                        textContainer.classList.remove('cursor')
                     }
                 }
-                resolve();
+                resolve()
             }
         }
         if (textContainer) {
-            typeCharacter(0);
+            typeCharacter(0)
         }
-    });
+    })
 }

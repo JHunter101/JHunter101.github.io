@@ -30,7 +30,7 @@
 }
 
 #home-main .text--tiny {
-	transform: scale(-1, 1);
+	transform: scale(-1, -1);
 	margin-bottom: 0;
 	margin-top: max(-0.3vw, -0.2rem);
 }

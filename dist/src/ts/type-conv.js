@@ -15,12 +15,13 @@ function type(toTypeID, toTypeString) {
             textContainer.classList.add('cursor', 'typing');
         }
         function typeCharacter(index) {
-            let typingDelay = 25;
+            let typingDelay = 20;
             const c = toTypeString.charAt(index);
-            if (c === '.') {
-                typingDelay *= 8;
+            if (index > 0) {
+                if (toTypeString.charAt(index - 1) === '.') {
+                    typingDelay *= 20;
+                }
             }
-            console.log(typingDelay);
             if (index < toTypeString.length) {
                 setTimeout(() => {
                     if (textContainer) {
